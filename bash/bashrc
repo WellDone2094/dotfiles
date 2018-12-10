@@ -1,0 +1,41 @@
+#  _               _
+# | |             | |
+# | |__   __ _ ___| |__  _ __ ___
+# | '_ \ / _` / __| '_ \| '__/ __|
+# | |_) | (_| \__ \ | | | | | (__
+# |_.__/ \__,_|___/_| |_|_|  \___|
+#
+                                 
+                                 
+
+
+# If not running interactively, don't do anything
+# [[ $- != *i* ]] && return
+
+alias ls='ls --color=auto'
+alias vib='vim ~/.bashrc'
+alias vic='vim ~/.config/nvim/init.vim'
+alias vi3='vim ~/.config/i3/config'
+alias unzip='dtrx'
+
+if [ -e ~/.bashrc.aliases ] ; then
+   source ~/.bashrc.aliases
+fi
+
+BROWSER=/usr/bin/chromium
+EDITOR=/usr/bin/vim
+PS1="[\[$(tput sgr0)\]\[\033[38;5;76m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\]@\h \[$(tput sgr0)\]\[\033[38;5;167m\]\W\[$(tput sgr0)\]\[\033[38;5;15m\]]\$ "
+
+# START - pyenv and pyenv virtualenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
+eval "$(pyenv virtualenv-init -)"
+#  END  - pyenv and pyenv virtualenv
+
+export PATH="$HOME/bin:$PATH"
+# export export GDK_SCALE=0.5
