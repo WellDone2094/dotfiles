@@ -1,6 +1,7 @@
 filetype plugin indent on
+syntax on
 
-" PLUGINS <(
+"z PLUGINS <(
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }        " deoplate autocomplete
@@ -15,6 +16,10 @@ Plug 'scrooloose/nerdcommenter'                                      " improved 
     let g:NERDCommentEmptyLines = 1
     let g:NERDTrimTrailingWhitespace = 1
     let g:NERDToggleCheckAllLines = 1
+Plug 'vimwiki/vimwiki'
+    let g:vimwiki_list = [{'path': '~/Notes/',
+                       \ 'syntax': 'markdown', 'ext': '.md'}]
+    let g:vimwiki_syntax = 'markdown'
 
 
 call plug#end()
@@ -29,12 +34,11 @@ highlight ColorColumn ctermbg=0
 let mapleader = " "
 set fileencodings=utf-8
 set mouse=a
-syntax on
 set hlsearch
 set nocompatible                                                     " use vim setting instead of vi 
 set backspace=indent,eol,start                                       " allow backspacing over everything in insert mode 
-set backupdir=~/.config/nvim/.backup//
-set directory=~/.config/nvim/.swp//
+set backupdir=~/.config/nvim/.backup/
+set directory=~/.config/nvim/.swp/
 set history=50                                                       " keep 50 lines of command line history
 set ruler                                                            " show the cursor position all the time
 set incsearch                                                        " do incremental searching
