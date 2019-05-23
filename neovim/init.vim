@@ -6,7 +6,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }        " deoplate autocomplete
     let g:deoplete#enable_at_startup = 1
-    let g:python3_host_prog = '/home/welldone/.pyenv/versions/neovim/bin/python'
+    let g:python3_host_prog = '/home/welldone/.pyenv/neovim/bin/python'
 Plug 'zchee/deoplete-jedi'                                           " python autocomplete
     let g:deoplete#sources#jedi#show_docstring = 1
 Plug 'christoomey/vim-tmux-navigator'                                " smart tmux-vim panes navigation
